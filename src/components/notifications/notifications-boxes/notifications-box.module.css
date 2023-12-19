@@ -1,10 +1,10 @@
 .notificationsBox{
     padding: 15px;
-    border-radius: var(--main-br);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 20px;
+    border-radius: var(--main-br);
+    justify-content: space-between;
+    align-items: center;
 }
 .notificationsBox .closeIcon{
     font-size: 22px;
