@@ -235,6 +235,11 @@
 .rootLayout > div.bottomRight{
     width: 420px;
 }
+.rootLayout > div.topLeft,
+.rootLayout > div.topRight,
+.rootLayout > div.bottomLeft{
+    display: none;
+}
 @media (max-width: 1200px) {
     .rootLayout > div.topLeft,
     .rootLayout > div.topRight,
