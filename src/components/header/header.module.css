@@ -1,0 +1,165 @@
+.header{
+    padding: 20px;
+    display: flex;
+    width: calc(100vw - 280px);
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 4;
+}
+@media (max-width:992px) {
+    .header{
+        width: calc(100vw - 100px);
+        position: fixed;
+        top: 0;
+        right: 10px;
+        background-color: var(--bg-color);
+        z-index: 3;
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+.header .dotsIcon{
+    display: none;
+    cursor: pointer;
+}
+.header .parts{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.header .part{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    cursor: pointer;
+    height: 40px;
+}
+.header .part .iconText{
+    display: none;
+}
+.header .part ul{
+    position: absolute;
+    right: 0;
+    bottom:0;
+    transform: translateY(calc(100% + 5px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--list-bg);
+    list-style: none;
+    opacity: 0;
+    border-radius: var(--main-br);
+    transition: var(--main-transition);
+    z-index: 10;
+}
+.header .part:nth-child(2):has(li:not(.done))::after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    right: 0px;
+    top: 5px;
+    background-color: red;
+}
+.header .part:has(span.active) ul,
+.header .part.active ul{
+    opacity: 1;
+}
+.header .part ul::before{
+    position: absolute;
+    content: "";
+    right: 5px;
+    top: 0;
+    transform: translateY(-100%);
+    /* width: 10px; */
+    /* height: 10px; */
+    /* background-color: red; */
+    border: 6px solid var(--list-bg);
+    border-color: transparent transparent var(--list-bg) transparent ;
+}
+.header .part:last-child ul::before{
+    right: 30px;
+}
+.header .part:nth-of-type(2) ul{
+    width: 200px;
+}
+.header .part:last-of-type ul{
+    text-align: center;
+    width: 150px;
+}
+.header .part ul li{
+    width: 100%;
+    /* background-color: yellow; */
+}
+.header .part ul li a{
+    color: var(--main-color);
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    transition: var(--main-transition);
+    padding: 5px;
+}
+.header .part ul li a:hover{
+    background-color: var(--card-bg);
+}
+.header .part ul li.done a,
+.header .part:last-child ul li a{
+    color: var(--text-color);
+}
+.header .part ul li:not(.done){
+    position: relative;
+}
+.header .part:nth-child(2) ul li:not(.done)::before{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: red;
+}
+.header .part .img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header .part .img img{
+    scale: 1.3;
+    transform: translateY(5px);
+}
+.header .part span{
+    color: var(--semi-text-color);
+}
+@media (max-width:500px) {
+    .header .dotsIcon{
+        /* display: block; */
+    }
+    .header .part .iconText{
+        display: none;
+        margin-left: 0px;
+    }
+    .header .parts .part{
+        padding-left: 0px;
+        width: 100%;
+        justify-content: flex-start;
+        transition: var(--main-transition);
+        transition-duration: 0.1s;
+    }
+    .header .parts .part:hover{
+        background-color: var(--card-bg);
+    }
+    .header .part:nth-child(2):has(li:not(.done))::after{
+        right: unset;
+        top: 5px;
+        left: 10px;
+    }
+}

@@ -1,0 +1,9 @@
+.contentLayout{
+    position: relative;
+}
+
+@media (max-width: 992px) {
+    .contentLayout{
+        padding-top: 100px;
+    }
+}

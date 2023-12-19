@@ -1,0 +1,122 @@
+.userProfile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: calc((100% - 20px) / 3);
+}
+form div:has(.names){
+    width: calc((100% - 10px) / 2);
+}
+form div:has(.address),
+form div:has(textarea){
+    width: 100%;
+}
+form div label{
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--card-heading-span-color);
+}
+form input,
+form textarea{
+    background-color: transparent;
+    border: 1px solid var(--list-bg);
+    padding: 10px;
+    font-size: 12px;
+    color: var(--semi-text-color);
+    border-radius: var(--main-br);
+    transition: var(--main-transition);
+}
+form input:focus,
+form textarea:focus{
+    border: 1px solid var(--main-color);
+}
+form div:has(input:focus) label,
+form div:has(textarea:focus) label{
+    color: var(--main-color);
+}
+form textarea{
+    width: 70%;
+    height: 100px;
+    resize: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+}
+form input:disabled{
+    cursor: not-allowed;
+    background-color: var(--disabled-input-bg);
+}
+form input:disabled::placeholder{
+    color: var(--disabled-input-text);
+}
+form input[type="submit"]{
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    form div{
+        width: 100%;
+    }
+}
+div div:has( > .profileImg){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div .profileImg{
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+div .profileH4{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+div .profileP{
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--semi-text-color);
+}
+div .socialLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+div .socialLinks a{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--list-bg);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    transition: var(--main-transition);
+}
+div .socialLinks a:hover{
+    box-shadow: 5px 5px 6px -2px #000;
+    transform: translateY(-1px);
+    background-color: var(--main-color);
+}

@@ -1,0 +1,8 @@
+.theMap{
+    height: 100vh;
+    margin-top: 20px;
+}
+.theMap iframe{
+    width: 100%;
+    height: 100%;
+}

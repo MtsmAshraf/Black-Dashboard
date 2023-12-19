@@ -1,0 +1,13 @@
+.chartContainer{
+    /* position: absolute;
+    inset: 0; */
+    overflow: unset;
+}
+.chartContainer .chart{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 90px) !important;
+    width: calc(100% - 40px) !important;
+}

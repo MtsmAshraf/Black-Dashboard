@@ -1,0 +1,16 @@
+.notificationsBox{
+    padding: 15px;
+    border-radius: var(--main-br);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.notificationsBox .closeIcon{
+    font-size: 22px;
+    cursor: pointer;
+    /* pointer-events: none; */
+}
+.notificationsBox .bellIcon{
+    font-size: 22px;
+}

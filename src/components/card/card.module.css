@@ -1,0 +1,59 @@
+.card{
+    /* background-color: var(--card-bg); */
+    border-radius: var(--main-br);
+    padding: 15px;
+    /* box-shadow: var(--main-shadow); */
+    position: relative;
+}
+.card .cardHeading{
+    min-height: 30px;
+}
+.card .cardHeading span{
+    color: var(--card-heading-span-color);
+    font-size: 12px;
+}
+.card .cardHeading div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: fit-content;
+}
+.card .cardHeading .subHeading{
+    display: inline-block;
+    margin-left: 5px;
+}
+.card:has(.subHeading) .cardHeading span:first-of-type{
+    color: var(--text-color);
+    font-size: 14px;
+}
+.card .cardHeading div .cardIcon{
+    color: var(--main-color);
+    font-size: 20px;
+}
+.card .cardHeading div h2{
+    font-weight: normal;
+    font-size: 26px;
+}
+.card:not(:has(.cardHeading span)) h2{
+    font-size: 16px ;
+}
+@media (max-width: 992px) {
+    .card{
+        width: 100% !important;
+    }
+}
+@media (max-width: 500px) {
+    .card{
+        height: fit-content !important;
+    }
+    .card:has(.chartCardContent){
+        height: 500px !important;
+        background-color: red;
+    }
+}
+.card .childrenDiv{
+    height: calc(100% - 50px);
+    width: 100%;
+    /* position: relative; */
+}

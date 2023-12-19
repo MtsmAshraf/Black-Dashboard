@@ -1,0 +1,39 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 20px); */
+}
+.footer .footerLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.footer .footerLinks a{
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer .copyRights .icon{
+    color: red;
+}
+.footer .copyRights a{
+    color: yellow;
+    font-size: 14px;
+    font-weight: bold;
+}
+@media (max-width: 500px) {
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
